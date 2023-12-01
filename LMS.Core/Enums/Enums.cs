@@ -8,6 +8,13 @@ using System.Threading.Tasks;
 
 namespace LMS.Core.Enums
 {
+    //public enum CurrencyEnums
+    //{
+    //    [Description("₦")]
+    //    Naira = 1,
+    //    [Description("$")]
+    //    Dollar = 2
+    //}
     public enum PromoCategoryEnums
     {
         [Description("NYSC")]
@@ -37,6 +44,17 @@ namespace LMS.Core.Enums
         Completed = 3,
         [Description("Canceled")]
         Canceled = 4
+    }
+    public enum StaffDepEnums
+    {
+        [Description("None")]
+        None = 0,
+        [Description("Admin")]
+        Admin = 1,
+        [Description("Customer Support")]
+        Customer_Support = 2,
+        [Description("Marketing")]
+        Marketing = 3
     }
     public enum UserRolesEnums
     {
@@ -142,4 +160,3 @@ namespace LMS.Core.Enums
 
     }
 }
-

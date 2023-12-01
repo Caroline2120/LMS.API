@@ -7,12 +7,28 @@ using System.Threading.Tasks;
 
 namespace LMS.Core.Utilities.Responses
 {
-    internal class APIResponse
+    public class APIResponse
     {
         public HttpStatusCode status { get; set; }
         public bool successful { get; set; }
     }
-    internal class APIResponseList<T> : APIResponse
+    public class APIResponses<T> : APIResponse
+    {
+        /// <summary>
+        /// The items being returned
+        /// </summary>
+        public T data { get; set; }
+        public string message { get; set; }
+
+        public APIResponses(T items, HttpStatusCode statusCode = HttpStatusCode.OK, bool isSuccess = true, string message = null)
+        {
+            data = items;
+            status = statusCode;
+            successful = isSuccess;
+            this.message = message;
+        }
+    }
+    public class APIResponseList<T> : APIResponse
     {
         /// <summary>
         /// The items being returned
@@ -26,7 +42,7 @@ namespace LMS.Core.Utilities.Responses
             successful = isSuccess;
         }
     }
-    internal class APIErrorResponseList : APIResponse
+    public class APIErrorResponseList : APIResponse
     {
         /// <summary>
         /// The items being returned

@@ -3,15 +3,16 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace LMS.Data
 {
-   public class EnrollmentDbContext : IdentityDbContext
+   public class EdurexDbContext : IdentityDbContext
     {
-        public EnrollmentDbContext(DbContextOptions<EnrollmentDbContext> options)
+        public EdurexDbContext(DbContextOptions<EdurexDbContext> options)
             : base(options)
         {
         }
@@ -69,6 +70,8 @@ namespace LMS.Data
         public DbSet<Promo> Promo { get; set; }
         public DbSet<PromoUsageHistory> PromoUsageHistory { get; set; }
         public DbSet<UserReferralPaymentHistory> UserReferralPaymentHistory { get; set; }
+        public DbSet<UserRoles> UserRole { get; set; }
+        public DbSet<Role> Role { get; set; }
     }
 }
 
